@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Comeet Assignment</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/style/main.css"/>
+
+    </head>
+    <body>
+
+        <div ng-app="app">
+                <city-grid></city-grid>
+        </div>
+        
+        <!--vendors -->
+        <script src="/node_modules/angular/angular.min.js"></script>
+        <script src="/node_modules/lodash/lodash.min.js"></script>
+        <script src="/node_modules/moment/min/moment.min.js"></script>
+
+        <!--app-->
+        <script src="./app/app.module.js"></script>
+        <script src="./app/constants/weather.cons.js"></script>
+        <script src="./app/services/weather.srv.js"></script>
+        <script src="./app/factories/weather.fac.js"></script>
+        <script src="./app/directives/loader.drv.js"></script>
+        <script src="./app/components/citygrid/cityGrid.cmp.js?1"></script>
+
+    </body>
+</html>
