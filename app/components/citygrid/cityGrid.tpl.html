@@ -1,0 +1,33 @@
+<div>
+    <div class="head">
+            <h2>Get the cities with the best comfortable weather</h2>
+            <button type="button" class="btn btn-primary" ng-click='$ctrl.getWorldWeather()'>Check</button>
+    </div>
+    
+    <div ng-if="$ctrl.loading">
+            <loader loading-text="Gathering worldwide weather information"></loader>
+    </div>
+    <div class="results" ng-if="$ctrl.cities.length > 0 ">
+            <table class="table table-striped header-fixed">
+                    <thead>
+                            <tr>
+                              <th scope="col">City</th>
+                              <th scope="col">Temperature (Celsius)</th>
+                              <th scope="col">Humidity%</th>
+                            </tr>
+                          </thead>
+                          <tbody class="table-result">
+                              <tr ng-repeat-start="city in ::$ctrl.cities" class="bg-success" ng-if="$first">
+                                  <td>{{::city.name}}</td>
+                                  <td>{{::city.temp}}</td>
+                                  <td>{{::city.humidity}}%</td>
+                              </tr>
+                              <tr ng-repeat-end ng-if="!$first">
+                                    <td>{{::city.name}}</td>
+                                    <td>{{::city.temp}}</td>
+                                    <td>{{::city.humidity}}%</td>
+                                </tr>
+                          </tbody>
+            </table>    
+    </div>
+</div>
